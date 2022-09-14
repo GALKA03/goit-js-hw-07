@@ -13,7 +13,7 @@ imgConteiner.addEventListener('click', onPicturesClick)
 function createGalaryMarcup(galleryItems){
     return galleryItems
     .map(({ preview, original, description }) => {
-        return` 
+      return` 
 <div class="gallery__item">
   <a class="gallery__link" href="${ original}">
     <img
@@ -25,39 +25,70 @@ function createGalaryMarcup(galleryItems){
   </a>
 </div>
 `;
+
 }).join('')
+
 }
+
+
+// const bigIMG = document.querySelector('[data-source="original"]')
+// console.log('я большая картинка', bigIMG)
+
 
 function onPicturesClick(event){
-    const noEventGallary = event.target.classList.contains('.gallery__item');
-    //если действие происходит не в нашем диве == ничего не происходит
-    if(!noEventGallary){
+  event.preventDefault();
+
+ const noEventGallary = event.target.nodeName;
+ 
+     //если действие происходит не в нашем диве == ничего не происходит 
+  if (!noEventGallary){
         return;
     }
+console.log(noEventGallary)
+    const instance = basicLightbox.create(`
+    <img src="${event.target.dataset.source}" width="800" height="600">
+`)
+console.log(instance.show())
 
-const bigIMG = document.querySelector('.gallery__image')
-    const myBigImg = bigIMG.dataset.source;
+//window.addEventListener('keydown',onClosePictores)
 
-const functionEl = event.target;
-const parantGalary = functionEl.clousest('.gallery__image');
-console.log(parantGalary)
- myBigImg.classList.remove(myBigImg)
+}
 
-if(myBigImg){
+imgConteiner.addEventListener('keydown', (event) => {
+  if(event.kode === "Escape"){ 
+    instance.close()
+  });
+//imgConteiner.addEventListener('keydown', onClosePictores);
+
+
+
+
+// const instance = basicLightbox.create(`
+//     <img src="assets/images/image.png" width="800" height="600">
+// `)
+// instance.show()
+
+
+// const functionEl = event.target;
+// const parantGalary = functionEl.clousest('.gallery__image');
+// console.log(parantGalary)
+//  myBigImg.classList.remove(myBigImg)
+
+// if(myBigImg){
    
-}
-parantGalary.classList.add(myBigImg)
+// }
+// parantGalary.classList.add(myBigImg)
 
-}
-
-
+ 
 
 
-    bigIMG.addEventListener('click', onBigpictures)
+
+
+//     bigIMG.addEventListener('click', onBigpictures)
     
-function onBigpictures(event){
+// function offPictures(event){
     
     
 
 
-}
+// }
