@@ -30,7 +30,6 @@ function createGalaryMarcup(galleryItems){
 
 }
 
-
 // const bigIMG = document.querySelector('[data-source="original"]')
 // console.log('я большая картинка', bigIMG)
 
@@ -39,9 +38,8 @@ function onPicturesClick(event){
   event.preventDefault();
 
  const noEventGallary = event.target.nodeName;
- 
      //если действие происходит не в нашем диве == ничего не происходит 
-  if (!noEventGallary){
+  if (noEventGallary !== 'IMG'){
         return;
     }
 console.log(noEventGallary)
@@ -50,14 +48,23 @@ console.log(noEventGallary)
 `)
 console.log(instance.show())
 
-//window.addEventListener('keydown',onClosePictores)
+window.addEventListener('keydown', onClosePictores)
 
 }
 
+function onClosePictores(event){
+  let lightbox = new SimpleLightbox('.gallery a', { /* options */ });
+gallery.on('show.simplelightbox', function (event) {
+console.log(lightbox)
+})
+
 imgConteiner.addEventListener('keydown', (event) => {
-  if(event.kode === "Escape"){ 
-    instance.close()
-  });
+  if(event.code === "Escape"){ 
+    instance.close();}
+  })
+}
+
+
 //imgConteiner.addEventListener('keydown', onClosePictores);
 
 
