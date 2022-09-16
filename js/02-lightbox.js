@@ -2,7 +2,8 @@ import { galleryItems } from './gallery-items.js';
 // Change code below this line
 console.log(galleryItems);
 const imgConteiner = document.querySelector('ul');
-  const galleryMarcup = createListGaleryMarcup(galleryItems);
+const galleryMarcup = createListGaleryMarcup(galleryItems);
+
  console.log(imgConteiner)
  imgConteiner.insertAdjacentHTML('beforeend', galleryMarcup)
  imgConteiner.addEventListener('click', onClick)
@@ -12,10 +13,12 @@ function createListGaleryMarcup (galleryItems){
     return galleryItems
     .map(({ preview, original, description }) => { 
     return ` 
+<li class ="galary__li">
   <a class="gallery__item" href="${ original}">
 <img class="gallery__image" src="${preview}" alt="${description}" title ="${description}"/>
 </a>
-`}).join('')
+<li>
+`})
 }
 
 

@@ -46,17 +46,23 @@ console.log(noEventGallary)
     const instance = basicLightbox.create(`
     <img src="${event.target.dataset.source}" width="800" height="600">
 `)
-console.log(instance.show())
+console.log(instance.show());
+
+  //  instance.close(() => {
+  //   console.log('lightbox not visible anymore')
+
+  //  })
+}
 
 window.addEventListener('keydown', onClosePictores);
 
-}
 function onClosePictores(event){
-   if(event.code === "Escape"){
+  const instance = basicLightbox.create()
+if (event.code === "Escape"){
 instance.close();
  }
 }
-
+//
 // imgConteiner.addEventListener('keydown', (event) => {
 //   if(event.code === "Escape"){ 
 //     }
