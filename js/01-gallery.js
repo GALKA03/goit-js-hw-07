@@ -42,29 +42,40 @@ function onPicturesClick(event){
   if (noEventGallary !== 'IMG'){
         return;
     }
-console.log(noEventGallary)
+
     const instance = basicLightbox.create(`
-    <img src="${event.target.dataset.source}" width="800" height="600">
-`)
-console.log(instance.show());
+        <img src="${event.target.dataset.source}" width="800" height="600">
+    `)
+    instance.show()
+    
 
-  //  instance.close(() => {
-  //   console.log('lightbox not visible anymore')
+  }
+//  else { 
+//     const instance = basicLightbox.create(`<img src="${event.target.dataset.source}" width="800" height="600">`)
+// { 
+// onShow:(instance) =>{
+// this.onInstanceclik = 
+// function (event) {
+//   if (event.code === "Escape"){
+//     instance.close();
+//      }
 
-  //  })
-}
+// }
+ //document.addEventListener('keydown', this.onInstanceclik);
 
-window.addEventListener('keydown', onClosePictores);
+// }
+// onClose: (instance) => {
+// document.removeEventListener('keydown', this.onInstanceclik).show()  }
+// } 
 
-function onClosePictores(event){
-  const instance = basicLightbox.create()
-if (event.code === "Escape"){
-instance.close();
- }
-}
-//
+// }
+
+
+
+
 // imgConteiner.addEventListener('keydown', (event) => {
 //   if(event.code === "Escape"){ 
+//   instance.close();
 //     }
 //   })
  
@@ -104,4 +115,4 @@ instance.close();
     
 
 
-// }
+ //}

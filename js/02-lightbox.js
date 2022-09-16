@@ -29,13 +29,15 @@ function onPicturesClick(event){
     }
 console.log(noEventGallary)
 
-var lightbox = new SimpleLightbox('.gallery a',{ animationSpeed:250 });
+var lightbox = new SimpleLightbox('.gallery a',{  });
 console.log(lightbox)
     let gallery = new SimpleLightbox('.gallery a');
     
-    gallery.on('show.simplelightbox', function () {
-        // do something…
+    gallery.on('show.simplelightbox', function (event) {
+       let  gallery = $('.gallery a').simpleLightbox();
+       gallery.close(); 
     });
+    document.removeEventListener('click', onClosePicture)
 }
 
 
