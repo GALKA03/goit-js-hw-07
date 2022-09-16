@@ -32,8 +32,10 @@ function onClick (event){
         
     }
     let lightbox = new SimpleLightbox('.gallery a', {captionDelay:250});
-    console.log(lightbox)
-    lightbox.on('shown.simplelightbox', function () {});
+    
+    lightbox.on('shown.simplelightbox', function () {
+      console.log(lightbox)  
+    });
     //gallery.close;;
 //     let gallery = new SimpleLightbox('.gallery a',{docClose:true});
 // gallery.on('error.simplelightbox', function () {

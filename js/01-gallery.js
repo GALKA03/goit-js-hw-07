@@ -7,7 +7,7 @@ const imgConteiner = document.querySelector('.gallery');
 const galleryMarcup = createGalaryMarcup(galleryItems);
 console.log(imgConteiner)
 imgConteiner.insertAdjacentHTML('beforeend', galleryMarcup)
-imgConteiner.addEventListener('click', onPicturesClick)
+
 
 //Создание и рендер разметки по массиву данных galleryItems и предоставленному шаблону элемента галереи.
 function createGalaryMarcup(galleryItems){
@@ -33,7 +33,7 @@ function createGalaryMarcup(galleryItems){
 // const bigIMG = document.querySelector('[data-source="original"]')
 // console.log('я большая картинка', bigIMG)
 
-
+imgConteiner.addEventListener('click', onPicturesClick)
 function onPicturesClick(event){
   event.preventDefault();
 
@@ -51,7 +51,6 @@ console.log(instance.show())
 window.addEventListener('keydown', onClosePictores);
 
 }
-
 function onClosePictores(event){
    if(event.code === "Escape"){
 instance.close();
