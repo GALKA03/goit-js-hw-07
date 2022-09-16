@@ -48,21 +48,22 @@ console.log(noEventGallary)
 `)
 console.log(instance.show())
 
-window.addEventListener('keydown', onClosePictores)
+window.addEventListener('keydown', onClosePictores);
 
 }
 
 function onClosePictores(event){
-  let lightbox = new SimpleLightbox('.gallery a', { /* options */ });
-gallery.on('show.simplelightbox', function (event) {
-console.log(lightbox)
-})
-
-imgConteiner.addEventListener('keydown', (event) => {
-  if(event.code === "Escape"){ 
-    instance.close();}
-  })
+   if(event.code === "Escape"){
+instance.close();
+ }
 }
+
+// imgConteiner.addEventListener('keydown', (event) => {
+//   if(event.code === "Escape"){ 
+//     }
+//   })
+ 
+ 
 
 
 //imgConteiner.addEventListener('keydown', onClosePictores);

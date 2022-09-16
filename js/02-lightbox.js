@@ -19,24 +19,26 @@ function createListGaleryMarcup (galleryItems){
 }
 
 
-const clickLinck = document.querySelector('.gallery__item')
+const clickLinck = document.querySelector('.gallery__image')
 console.log(clickLinck.href)
 clickLinck.addEventListener('click',onClick);
 
 function onClick (event){
     event.preventDefault();
     const clickFunctions = event.target.nodeName;
-    console.log(clickFunctions)
+ 
     if(clickFunctions !== 'IMG'){
         return
+        
     }
-    let lightbox = new SimpleLightbox('.gallery a', {captionDelay:500});
+    let lightbox = new SimpleLightbox('.gallery a', {captionDelay:250});
     console.log(lightbox)
-    //gallery.close;
-    let gallery = new SimpleLightbox('.gallery a',{docClose:sl-fixed});
-gallery.on('show.simplelightbox', function () {
-	// do something…
-});
+    lightbox.on('shown.simplelightbox', function () {});
+    //gallery.close;;
+//     let gallery = new SimpleLightbox('.gallery a',{docClose:true});
+// gallery.on('error.simplelightbox', function () {
+//     gallery.close// do something…
+// });
     
 // ;
    
