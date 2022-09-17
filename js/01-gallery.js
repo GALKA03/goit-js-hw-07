@@ -44,13 +44,26 @@ function onPicturesClick(event){
     }
 
     const instance = basicLightbox.create(`
-        <img src="${event.target.dataset.source}" width="800" height="600">
-    `)
-    instance.show()
-    
+    <img src="${event.target.dataset.source} width="800" height="600">
+`)
+instance.show();
+// С этой функцией все равно не получается.!!!
+//  const instance = basicLightbox.create(`
+//       <img src="${event.target.dataset.source}" width="800" height="600">
+//    `, { onShow: () => { document.addEventListener('keydown',onInstanceclik),
+//    onClose:()=> {document.removeEventListener('keydown',onInstanceclik)}   }
+//   } )
+//       function onInstanceclik(event){
+// if(event.code === "Escape"){
+//   console.log(instance.close())
+// }
+//   }
 
   }
-//  else { 
+
+
+
+  //  else { 
 //     const instance = basicLightbox.create(`<img src="${event.target.dataset.source}" width="800" height="600">`)
 // { 
 // onShow:(instance) =>{

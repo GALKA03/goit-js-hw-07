@@ -13,8 +13,7 @@ function createGalaryMarcup(galleryItems){
       return` 
       <a class="gallery__item" href="${ original}">
   <img class="gallery__image"src="${preview}"alt="${description}" title= ${description}/>
-</a>`})
-.join();
+</a>`}).join('');
 }
 const clickLinck = document.querySelector('.gallery__image')
 console.log(clickLinck.src)
@@ -29,15 +28,10 @@ function onPicturesClick(event){
     }
 console.log(noEventGallary)
 
-var lightbox = new SimpleLightbox('.gallery a',{  });
-console.log(lightbox)
-    let gallery = new SimpleLightbox('.gallery a');
-    
-    gallery.on('show.simplelightbox', function (event) {
-       let  gallery = $('.gallery a').simpleLightbox();
-       gallery.close(); 
-    });
-    document.removeEventListener('click', onClosePicture)
+var lightbox = new SimpleLightbox('.gallery a', {captionDelay:250 });
+    console.log(lightbox)
+
+    //document.removeEventListener('click', onClosePicture)
 }
 
 
