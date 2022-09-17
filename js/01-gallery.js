@@ -24,8 +24,7 @@ function createGalaryMarcup(galleryItems){
     />
   </a>
 </div>
-`;
-
+`
 }).join('')
 
 }
@@ -44,9 +43,9 @@ function onPicturesClick(event){
     }
 
     const instance = basicLightbox.create(`
-    <img src="${event.target.dataset.source} width="800" height="600">
+    <img src="${event.target.dataset.source}" width="800" height="600">
 `)
-instance.show();
+console.log( instance.show())  }
 // С этой функцией все равно не получается.!!!
 //  const instance = basicLightbox.create(`
 //       <img src="${event.target.dataset.source}" width="800" height="600">
@@ -59,7 +58,7 @@ instance.show();
 // }
 //   }
 
-  }
+  
 
 
 
