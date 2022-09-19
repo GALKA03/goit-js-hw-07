@@ -42,89 +42,26 @@ function onPicturesClick(event){
         return;
     }
 
-    const instance = basicLightbox.create(`
-    <img src="${event.target.dataset.source}" width="800" height="600">
-`)
-console.log( instance.show())  }
+//     const instance = basicLightbox.create(`
+//     <img src="${event.target.dataset.source}" width="800" height="600">
+// `)
+//  }
 // С этой функцией все равно не получается.!!!
-//  const instance = basicLightbox.create(`
-//       <img src="${event.target.dataset.source}" width="800" height="600">
-//    `, { onShow: () => { document.addEventListener('keydown',onInstanceclik),
-//    onClose:()=> {document.removeEventListener('keydown',onInstanceclik)}   }
-//   } )
-//       function onInstanceclik(event){
-// if(event.code === "Escape"){
-//   console.log(instance.close())
-// }
-//   }
+ const instance = basicLightbox.create(`
+      <img src="${event.target.dataset.source}" width="800" height="600">
+   `, { onShow: () => { document.addEventListener('keydown',onInstanceclik)},
+   onClose:()=> {document.removeEventListener('keydown',onInstanceclik)}   }
+   )
+   instance.show()
+      function onInstanceclik(event){
+if(event.code === "Escape"){
+instance.close()
+}
+
+      
 
   
 
 
 
-  //  else { 
-//     const instance = basicLightbox.create(`<img src="${event.target.dataset.source}" width="800" height="600">`)
-// { 
-// onShow:(instance) =>{
-// this.onInstanceclik = 
-// function (event) {
-//   if (event.code === "Escape"){
-//     instance.close();
-//      }
-
-// }
- //document.addEventListener('keydown', this.onInstanceclik);
-
-// }
-// onClose: (instance) => {
-// document.removeEventListener('keydown', this.onInstanceclik).show()  }
-// } 
-
-// }
-
-
-
-
-// imgConteiner.addEventListener('keydown', (event) => {
-//   if(event.code === "Escape"){ 
-//   instance.close();
-//     }
-//   })
- 
- 
-
-
-//imgConteiner.addEventListener('keydown', onClosePictores);
-
-
-
-
-// const instance = basicLightbox.create(`
-//     <img src="assets/images/image.png" width="800" height="600">
-// `)
-// instance.show()
-
-
-// const functionEl = event.target;
-// const parantGalary = functionEl.clousest('.gallery__image');
-// console.log(parantGalary)
-//  myBigImg.classList.remove(myBigImg)
-
-// if(myBigImg){
-   
-// }
-// parantGalary.classList.add(myBigImg)
-
- 
-
-
-
-
-//     bigIMG.addEventListener('click', onBigpictures)
-    
-// function offPictures(event){
-    
-    
-
-
- //}
+}}

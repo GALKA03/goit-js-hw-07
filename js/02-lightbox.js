@@ -1,12 +1,12 @@
 import { galleryItems } from './gallery-items.js';
-// Change code below this line
-console.log(galleryItems);
 const imgConteiner = document.querySelector('ul');
 const galleryMarcup = createGalaryMarcup(galleryItems);
-console.log(imgConteiner)
 imgConteiner.insertAdjacentHTML('beforeend',galleryMarcup)
+let lightbox = new SimpleLightbox('.gallery a', {captionDelay:250 });
+    console.log(lightbox)
 
-// /Создание и рендер разметки по массиву данных galleryItems и предоставленному шаблону элемента галереи.
+imgConteiner.addEventListener('click', onPicturesClick)
+
 function createGalaryMarcup(galleryItems){
     return galleryItems
     .map(({ preview, original, description }) => {
@@ -15,9 +15,7 @@ function createGalaryMarcup(galleryItems){
   <img class="gallery__image"src="${preview}"alt="${description}" title= ${description}/>
 </a>`}).join('');
 }
-const clickLinck = document.querySelector('.gallery__image')
-console.log(clickLinck.src)
-imgConteiner.addEventListener('click', onPicturesClick)
+
 function onPicturesClick(event){
   event.preventDefault();
 
@@ -26,12 +24,6 @@ function onPicturesClick(event){
   if (noEventGallary !== 'IMG'){
         return;
     }
-console.log(noEventGallary)
-
-var lightbox = new SimpleLightbox('.gallery a', {captionDelay:250 });
-    console.log(lightbox)
-
-    //document.removeEventListener('click', onClosePicture)
 }
 
 
